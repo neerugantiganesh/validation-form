@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+       *{
+      margin: 0;
+      padding: 0;
+      font-family: "poppins" sans-serif;
+      box-sizing: border-box;
+    }
+    .container{
+     border: 20px;
+     font-weight: 600;
+     font-size: 20px;
+    }
+    body{
+      background-color: antiquewhite;
+    }
+    .validation{
+      margin-left: 20%;
+      margin-top: 100px;
+      margin-right: 50%;
+      padding: 10px;
+      background-color: rgb(222, 196, 161);
+      border-radius: 10px;
+      position: absolute;
+      box-shadow: 5px 10px 30px 5px;
+    }
+    input{
+      padding: 8px;
+      padding-right: 50px;
+      position: relative;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      margin: 5px;
+      
+    }
+    textarea{
+      padding-right: 59px;
+      padding-bottom: 20px;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+
+    }
+    #button{
+      padding: 5px;
+      margin-left: 40%;
+      position: relative;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      background-color: rgb(251, 251, 251);
+      font-weight: 600;
+      
+    }
+    #button:hover{
+      background-color: aqua;
+      color: black;
+    }
+    #button:active{
+      background-color: greenyellow;
+
+    }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+      <div class="validation">
+        <form id="myForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="eg : Neeruganti Ganesh" required>
+          <br>
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="eg : ganesh123@gmail.com" required>
+          <br>
+          
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" placeholder="eg :  1234567890" required>
+          <br>
+          
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <br>
+          
+          <input type="submit" value="Submit" id="button">
+      </form>
+      </div>
+    </div>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            
+            event.preventDefault();
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var message = document.getElementById("message").value;
+
+            if (name.trim() === "" || email.trim() === "" || phone.trim() === "" || message.trim() === "") {
+                
+                alert("Please fill in all fields");
+            } else {
+                console.log("Name: " + name);
+                console.log("Email: " + email);
+                console.log("Phone: " + phone);
+                console.log("Message: " + message);
+            }
+        });
+    </script>
+
+</body>
+</html>
